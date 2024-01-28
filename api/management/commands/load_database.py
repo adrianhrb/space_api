@@ -18,13 +18,13 @@ class Command(BaseCommand):
             f = csv.DictReader(file)
             for line in f:
                 rocketStatus = line['RocketStatus']
-                success = line['success']
+                success = line['MissionStatus']
                 SpaceMissions.objects.create(
                     mission=line['Mission'],
                     company=line['Company'],
                     location=line['Location'],
                     date=datetime.strptime(line['Date'], '%Y-%m-%d').date(),
-                    time=datetime.strptime(line['Time'], '%H:%M:%S').time(),
+                    time=datetime.strptime(line['Time'], '%H:%M:%S').time() if line['Time'] else None,
                     rocket=line['Rocket'],
                     rocketStatus='A' if rocketStatus == 'Active' else 'R',
                     success=True if success == 'Success' else False

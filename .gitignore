@@ -2,3 +2,4 @@
 .env
 db.sqlite3
 management/data/
+__pycache__

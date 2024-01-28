@@ -9,8 +9,8 @@ class SpaceMissions(models.Model):
     company = models.CharField(max_length=255)
     location = models.CharField(max_length=255)
     date = models.DateField()
-    time = models.TimeField()
+    time = models.TimeField(blank=True, null=True)
     rocket = models.CharField(max_length=255)
     rocketStatus = models.CharField(choices=RocketStatusChoices, max_length=1)
-    succes = models.BooleanField()
+    success = models.BooleanField()
 
