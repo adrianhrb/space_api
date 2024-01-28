@@ -1,8 +1,5 @@
 from django.db import models
 
-class RocketStatusChoices(models.TextChoices):
-    retired = 'R', 'Retired'
-    active = 'A', 'Active'
 
 class SpaceMissions(models.Model):
     mission = models.CharField(max_length=255)
@@ -11,6 +8,6 @@ class SpaceMissions(models.Model):
     date = models.DateField()
     time = models.TimeField(blank=True, null=True)
     rocket = models.CharField(max_length=255)
-    rocketStatus = models.CharField(choices=RocketStatusChoices, max_length=1)
+    rocketStatus = models.CharField(max_length=255)
     success = models.BooleanField()
 
