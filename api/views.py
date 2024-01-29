@@ -16,6 +16,7 @@ class SpaceMissionsViewSet(viewsets.ModelViewSet):
     serializer_class = SpaceMissionsSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 
+
 class SpaceMissionByCompany(ListAPIView):
     '''
     API endpoint to retrieve space missions by company name
@@ -38,12 +39,11 @@ class SpaceMissionByMissionName(ListAPIView):
 
 
 class SuccessMissions(ListAPIView):
-    queryset = SpaceMissions.objects.filter(success=True)
     
-    def list(self, request):
-        success_misions = self.get_queryset()
-        serializer = SpaceMissionsSerializer(success_misions)
-        return Response(serializer.data)
+    serializer_class = SpaceMissionsSerializer
+
+    def get_queryset(self):
+        return SpaceMissions.objects.filter(success=True)
 
 # class SuccessMissions(ListAPIView):
 #     '''
