@@ -5,6 +5,7 @@ from typing import Any
 import pytz
 from django.core.management import BaseCommand
 from django.core.management.base import CommandParser
+from tqdm import tqdm
 
 from api.models import SpaceMissions
 
@@ -28,7 +29,7 @@ class Command(BaseCommand):
         with open(file, mode='r') as file:
             f = csv.DictReader(file)
             bulk_list = []
-            for line in f:
+            for line in tqdm(f, total=4630):
                 success = line['MissionStatus']
                 new_mission = SpaceMissions(
                     mission=line['Mission'],
