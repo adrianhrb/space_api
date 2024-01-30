@@ -17,12 +17,13 @@ class Command(BaseCommand):
         return parser.add_argument('--file', dest='file', type=str)
 
     def handle(self, *args: Any, **options: Any) -> str | None:
-        Astronauts.objects.delete()
+        Astronauts.objects.all().delete()
         file_from = options['file']
         with open(file_from, 'r'):
             f = csv.DictReader(file_from)
             astronauts_bulk = []
             for astronaut in tqdm(f, total=644):
+                print(astronaut)
                 name, surname = astronaut['Name'].split()
                 birthdate = pytz.utc.localize(datetime.strptime(astronaut['Date'], '%Y-%m-%d'))
                 new_astronaut = Astronauts(
