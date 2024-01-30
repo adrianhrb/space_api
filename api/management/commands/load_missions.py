@@ -11,7 +11,7 @@ from api.models import SpaceMissions
 
 
 class Command(BaseCommand):
-    help = 'Load the database from the file with information'
+    help = 'Load the database with all the space smissions with the given file'
 
     def add_arguments(self, parser: CommandParser) -> None:
         return parser.add_argument('--file', dest='file', type=str)

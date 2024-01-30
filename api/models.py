@@ -22,8 +22,7 @@ class Astronauts(models.Model):
     https://www.kaggle.com/datasets/kaushiksinghrawat/humans-to-have-visited-space
     """
 
-    name = models.CharField(max_length=255)
-    surname = models.CharField(max_length=255)
+    fullname = models.CharField(max_length=255)
     nationality = models.CharField(max_length=255)
     birthdate = models.DateField()
     mission = models.CharField(max_length=255)

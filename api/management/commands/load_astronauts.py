@@ -19,19 +19,16 @@ class Command(BaseCommand):
     def handle(self, *args: Any, **options: Any) -> str | None:
         Astronauts.objects.all().delete()
         file_from = options['file']
-        with open(file_from, 'r'):
-            f = csv.DictReader(file_from)
+        with open(file_from, mode='r') as file:
+            f = csv.DictReader(file)
             astronauts_bulk = []
-            for astronaut in tqdm(f, total=644):
-                print(astronaut)
-                name, surname = astronaut['Name'].split()
-                birthdate = pytz.utc.localize(datetime.strptime(astronaut['Date'], '%Y-%m-%d'))
+            for line in tqdm(f, total=644):
+                birthdate = pytz.utc.localize(datetime.strptime(line['Date'], '%Y-%m-%d'))
                 new_astronaut = Astronauts(
-                    name=name,
-                    surname=surname,
+                    fullname=line['Name'],
                     birthdate=birthdate,
-                    nationality=astronaut['Nationality'],
-                    missio=astronaut['Flight'],
+                    nationality=line['Nationality'],
+                    mission=line['Flight'],
                 )
                 astronauts_bulk.append(new_astronaut)
             Astronauts.objects.bulk_create(astronauts_bulk)
