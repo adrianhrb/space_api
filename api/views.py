@@ -47,20 +47,8 @@ class SuccessMissions(ListAPIView):
         return SpaceMissions.objects.filter(success=True)
 
 
-# class SuccessMissions(ListAPIView):
-#     '''
-#     API endpoint to retrieve all succcesful missions
-#     '''
-#     serializer_class = SpaceMissionsSerializer
+class UnsuccessMission(ListAPIView):
+    serializer_class = SpaceMissionsSerializer
 
-#     def get_queryset(self):
-#         return SpaceMissions.objects.filter(success=True)
-
-# class UnsuccessMissions(ListAPIView):
-#     '''
-#     API endpoint to retrieve all unsucccesful missions
-#     '''
-#     serializer_class = SpaceMissionsSerializer
-
-#     def get_queryset(self):
-#         return SpaceMissions.objects.filter(success=False)
+    def get_queryset(self):
+        return SpaceMissions.objects.filter(success=False)
