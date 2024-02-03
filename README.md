@@ -44,9 +44,11 @@ Some functionalities will involve the use of sensitive information, so we will u
 
 To streamline some repetitive processes on terminal we are using [Justfile](https://github.com/casey/just), a handy way to run and save commands. For example, in case of make the migrations of an app in django, instead of using `python manage.py makemigrations app` we are using `just makemigrations app`
 
-### API endpoints 📩 (All endpoints are Insensitive Case, so looking for NASA or nasa will retrieve same JSON)
-> [!NOTE]
-> Endpoints are build with __icontains method, so you can use urls whithout writting full names.
+### API endpoints 📩
+All endpoints are Insensitive Case, so looking for NASA or nasa will retrieve same JSON  
+
+Endpoints are build with __icontains method, so you can use urls whithout writting full names.  
+
 The API response is in JSON format. You have the following endpoints:  
 - ```/api/missions/``` -> Retrieve all missions from database
 - ```/api/missions/success/``` -> Retrieve all successfull missions
