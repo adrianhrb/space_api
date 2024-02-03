@@ -1,18 +1,15 @@
 from rest_framework import serializers
 
-from .models import SpaceMissions
+from .models import Astronauts, SpaceMissions
 
 
 class SpaceMissionsSerializer(serializers.ModelSerializer):
     class Meta:
         model = SpaceMissions
-        fields = (
-            'id',
-            'mission',
-            'company',
-            'location',
-            'launched',
-            'rocket',
-            'rocketStatus',
-            'success',
-        )
+        fields = '__all__'
+
+
+class AstronautsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Astronauts
+        fields = '__all__'

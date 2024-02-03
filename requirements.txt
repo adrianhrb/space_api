@@ -1,4 +1,4 @@
 django==5.0.1
 djangorestframework==3.14.0
-pytz
-tqdm
+pytz==2024.1
+tqdm==4.66.1
