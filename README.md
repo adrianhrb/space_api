@@ -48,19 +48,19 @@ To streamline some repetitive processes on terminal we are using [Justfile](http
 > [!NOTE]
 > Endpoints are build with __icontains method, so you can use urls whithout writting full names.
 The API response is in JSON format. You have the following endpoints:  
-- /api/missions/ -> Retrieve all missions from database
-- /api/missions/success/ -> Retrieve all successfull missions
-- /api/missions/unsuccess/ -> Retrieve all unsuccessfull missions
-- /api/missions/1(pk)/ -> Retrieve a single mission looking by Id, in this example, mission with id 1
-- /api/missions/company/Nasa(company_name) -> Retrieve all missions by company name, in this example, all missions made by company Nasa
-- /api/missions/name/Sputnik(mission_name) -> Retrieve all missions by mission name, in this example, all missiones named Sputnik
-- /api/missions/rocket/Falcon1(rocket_name) -> Retrieve all missions by rocket name, in this example, all missions made by Falcon rocker
-- /api/missions/location/Florida(location_name) -> Retrieve all missions by location name, in this example, all mission launched from Florida
-- /api/astronauts/ -> Retrieve all astronauts
-- /api/astronauts/1(pk) -> Retrieve a single astronaut by id, in this example, astronaut with id 1.
-- /api/astronauts/nationality/Soviet(nationality) -> Retrieve astronauts by their nationality, in this example, all the Soviet astronauts
-- /api/astronauts/name/Armstrong(name) -> Retrieve astronauts by theit name, in this example, all astronauts with surname Armstrong
-- /api/astronauts/mission/Gemini(name) -> Retrieve astronauts by mission name, in this example, all astronauts that went to the space in a mission with name Gemini
+- ```/api/missions/``` -> Retrieve all missions from database
+- ```/api/missions/success/``` -> Retrieve all successfull missions
+- ```/api/missions/unsuccess/``` -> Retrieve all unsuccessfull missions
+- ```/api/missions/1(pk)/``` -> Retrieve a single mission looking by Id, in this example, mission with id 1
+- ```/api/missions/company/Nasa(company_name)``` -> Retrieve all missions by company name, in this example, all missions made by company Nasa
+- ```/api/missions/name/Sputnik(mission_name)``` -> Retrieve all missions by mission name, in this example, all missiones named Sputnik
+- ```/api/missions/rocket/Falcon1(rocket_name)``` -> Retrieve all missions by rocket name, in this example, all missions made by Falcon rocker
+- ```/api/missions/location/Florida(location_name)``` -> Retrieve all missions by location name, in this example, all mission launched from Florida
+- ```/api/astronauts/``` -> Retrieve all astronauts
+- ```/api/astronauts/1(pk)``` -> Retrieve a single astronaut by id, in this example, astronaut with id 1.
+- ```/api/astronauts/nationality/Soviet(nationality)``` -> Retrieve astronauts by their nationality, in this example, all the Soviet astronauts
+- ```/api/astronauts/name/Armstrong(name)``` -> Retrieve astronauts by theit name, in this example, all astronauts with surname Armstrong
+- ```/api/astronauts/mission/Gemini(name)``` -> Retrieve astronauts by mission name, in this example, all astronauts that went to the space in a mission with name Gemini
 
 > [!IMPORTANT]
 > Base url will be http://127.0.0.1:8000 if you are running project locally. This will be updated with the deployment.
