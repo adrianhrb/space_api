@@ -5,7 +5,7 @@ An API REST about space missions and astronauts
     <img src='img/astronaut.jpg'>
 </div>
 
-_Image from [Nikon corporation]('https://unsplash.com/es/fotos/fotografia-de-un-astronauta-junto-al-satelite-OLlj17tUZnU')_
+_Image from <a href='https://unsplash.com/es/fotos/fotografia-de-un-astronauta-junto-al-satelite-OLlj17tUZnU'>Unplash</a>_
 
 This project is an API REST with django (using [django-rest-framework](https://www.django-rest-framework.org)) about all Space missions and Astronauts that have been in space from 1957 to 2023. In this Readme you will find an explanation, some examples and the endpoints to make queries.
 <br>
