@@ -93,7 +93,7 @@ class SpaceMissionsByLocation(ListAPIView):
         return SpaceMissions.objects.filter(location__icontains=location)
 
 
-# ASTRONAUTS ENDPOINTSi
+# ASTRONAUTS ENDPOINTS
 class AstronautsListView(ListAPIView):
     """
     API endpoint to retrieve all astronauts
